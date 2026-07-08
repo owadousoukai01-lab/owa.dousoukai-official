@@ -36,7 +36,10 @@
                 <a href="#about" class="hover:text-pink-500 transition">理念</a>
                 <a href="#projects" class="hover:text-pink-500 transition">プロジェクト</a>
                 <a href="#news" class="hover:text-pink-500 transition">お知らせ</a>
-                <a href="#" class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition">寄付で応援</a>
+                <!-- グレーアウトして押せない設定 -->
+<span class="bg-gray-300 text-white px-5 py-2 rounded-full cursor-not-allowed opacity-70">
+    寄付の受付準備中
+</span>
             </div>
         </div>
     </nav>
@@ -82,97 +85,49 @@
         </div>
     </section>
 
-    <!-- プロジェクトセクション -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-16 text-center">進行中のプロジェクト</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 継続支援プランカード -->
-<div class="bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-blue-900 flex flex-col">
-    <!-- 上部のラベル -->
-    <div class="navy-bg text-white text-center py-2 text-xs font-bold tracking-widest uppercase">
-        Always Open
-    </div>
-    
-    <div class="p-8 flex-1 flex flex-col">
-        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full w-max">運営基盤の支援</span>
-        <h4 class="text-2xl font-black mt-4 leading-tight text-blue-900">桜和高校同窓会<br>継続支援プラン</h4>
+ <!-- プロジェクトセクション -->
+<section id="projects" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h3 class="text-3xl font-bold mb-16 text-center">進行中のプロジェクト</h3>
+
+        <!-- ここから Coming Soon 用のコンテナ -->
+        <div class="relative">
+            
+            <!-- 1. 背景のカード群（わざと少しぼかして暗くします） -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 filter blur-[2px] opacity-40 grayscale pointer-events-none select-none">
+                <!-- ダミーのカード（以前作ったコードをそのまま入れておけばOK） -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border p-8 h-[400px]">
+                    <div class="h-48 bg-gray-200 rounded-2xl mb-4"></div>
+                    <div class="h-6 bg-gray-200 w-3/4 mb-4"></div>
+                    <div class="h-4 bg-gray-200 w-full mb-2"></div>
+                    <div class="h-4 bg-gray-200 w-1/2"></div>
+                </div>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border p-8 h-[400px]">
+                    <div class="h-48 bg-gray-200 rounded-2xl mb-4"></div>
+                    <div class="h-6 bg-gray-200 w-3/4 mb-4"></div>
+                    <div class="h-4 bg-gray-200 w-full mb-2"></div>
+                </div>
+            </div>
+
+            <!-- 2. Coming Soon オーバーレイ（中央に浮き出る文字） -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                <!-- ロケット桜ロゴ風のバッジ -->
+                <div class="bg-white/90 backdrop-blur-md p-10 rounded-full shadow-2xl border-2 border-blue-100 text-center transform transition hover:scale-105">
+                    <div class="text-5xl mb-4 animate-bounce">🚀</div>
+                    <h4 class="text-3xl font-black text-blue-900 mb-2">桜和Boost</h4>
+                    <p class="bg-blue-600 text-white text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">COMING SOON</p>
+                    <p class="text-gray-600 text-sm font-medium leading-relaxed">
+                        現在、生徒会と「在校生のお悩み」を収集中です。<br>
+                        プロジェクトの公開まで、今しばらくお待ちください。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- ここまで Coming Soon コンテナ -->
         
-        <p class="text-gray-600 text-sm mt-4 leading-relaxed flex-1">
-            特定のプロジェクトに限定せず、同窓会活動全般（サイト維持・イベント主催・クラウドファンディング未達成時の補助）を支えていただくプランです。この支援があるからこそ、安定した支援を在校生へ届けることができます。
-        </p>
-
-        <!-- 金額の目安 -->
-        <div class="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-100">
-            <p class="text-xs text-gray-500 font-bold mb-2">ご支援の目安（年額）</p>
-            <div class="flex justify-between text-sm">
-                <span>社会人の方：3,000円〜</span>
-                <span>学生の方：1,000円〜</span>
-            </div>
-        </div>
-
-        <!-- 決済ボタン（Stripeのリンクを貼る） -->
-        <a href="（Stripeの支払いリンク）" target="_blank" class="w-full mt-8 navy-bg text-white text-center font-bold py-4 rounded-xl hover:opacity-90 shadow-lg transition-all transform hover:-translate-y-1">
-            サポーターになる
-        </a>
-        <p class="text-[10px] text-gray-400 mt-3 text-center">
-            ※いつでも停止可能な自由金額の寄付形式です。
-        </p>
     </div>
-</div>
-                
-                <!-- プロジェクトカード 1 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-                    <img src="Wi-Fiイメージ.webp" alt="Wi-Fiイメージ" class="h-48 w-full object-cover">
-                    <div class="p-8">
-                        <span class="bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase">桜和Boost（お悩み解決）</span>
-                        <h4 class="text-xl font-bold mt-4 leading-snug">校内のWi-Fi環境を整えたい！</h4>
-                        <p class="text-gray-600 text-sm mt-3 leading-relaxed">生徒たちが学習に集中できる環境を整えるため、校内のWi-Fi環境を改善するプロジェクトです。</p>
-                        <div class="mt-8">
-                            <div class="flex justify-between text-sm mb-2 font-bold">
-                                <span class="text-pink-500">達成率 45%</span>
-                                <span class="text-gray-400">目標: 150,000円</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-pink-500 h-3 rounded-full transition-all duration-1000" style="width: 45%"></div>
-                            </div>
-                        </div>
-                        <button class="w-full mt-8 bg-blue-900 navy-bg text-white font-bold py-3 rounded-xl hover:opacity-90 transition">この活動を支援する</button>
-                    </div>
-                </div>
-
-                <!-- プロジェクトカード 2 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-                    <img src="桜和グッズイメージ.webp" alt="桜和グッズイメージ" class="h-48 w-full object-cover">
-                    <div class="p-8">
-                        <span class="bg-pink-100 text-pink-600 text-xs font-bold px-3 py-1 rounded-full uppercase">桜和Boost（探究活動支援）</span>
-                        <h4 class="text-xl font-bold mt-4 leading-snug">桜和高校のグッズを作りたい！</h4>
-                        <p class="text-gray-600 text-sm mt-3 leading-relaxed">教育探究の活動内で、桜和高校のグッズを作りたいというプロジェクトです。</p>
-                        <div class="mt-8">
-                            <div class="flex justify-between text-sm mb-2 font-bold">
-                                <span class="text-pink-500">達成率 75%</span>
-                                <span class="text-gray-400">目標: 10,000円</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-pink-500 h-3 rounded-full transition-all duration-1000" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <button class="w-full mt-8 bg-blue-900 navy-bg text-white font-bold py-3 rounded-xl hover:opacity-90 transition">この活動を支援する</button>
-                    </div>
-                </div>
-
-
-                <!-- 準備中カード -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border-2 border-dashed border-gray-300 flex items-center justify-center min-h-[450px]">
-                    <div class="text-center px-10">
-                        <div class="text-5xl mb-4">💬</div>
-                        <p class="text-gray-400 font-bold leading-relaxed">生徒会と次のプロジェクトを<br>打ち合わせ中です</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+</section>
     
     <!-- お知らせセクション -->
 <section id="news" class="py-20 bg-white">
@@ -194,39 +149,35 @@
                 <span class="hidden md:block text-gray-300">→</span>
             </article>
 
-            <article class="news-item border-b border-gray-100 py-6 flex flex-col md:flex-row md:items-center group cursor-pointer" onclick="openModal(this)">
+            <!-- お知らせ 1：ぼかし設定 -->
+            <article class="news-item border-b border-gray-100 py-6 flex flex-col md:flex-row md:items-center group opacity-60 pointer-events-none select-none">
                 <!-- 日付 -->
                 <time class="news-date text-gray-400 text-sm md:w-32 mb-2 md:mb-0">2026.08.29</time>
                 
-                <!-- タグ -->
-                <span class="news-tag bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full w-max md:mr-6 mb-2 md:mb-0">活動報告</span>
+                <!-- タグ（グレーに変更） -->
+                <span class="news-tag bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full w-max md:mr-6 mb-2 md:mb-0">準備中</span>
                 
-                <!-- タイトル -->
-                <h4 class="news-title text-lg font-bold group-hover:text-pink-500 transition flex-1">
+                <!-- タイトル（ぼかし：blurを追加） -->
+                <h4 class="news-title text-lg font-bold text-gray-400 blur-[4px] flex-1">
                    第2回「桜和高校全体同窓会」を実施しました
                 </h4>
 
-                <!-- ★詳細文（普段は隠れている中身） ★ -->
-                <div class="news-body hidden">
-                    <p> '本日、第2回「桜和高校全体同窓会」を開催しました。 </p>
-                    <p>参加者は約80名。教育カフェ形式での近況報告やオリジナルルールのボードゲームなど、学年を超えて盛り上がることができました。</p>
-                </div>
-                <span class="hidden md:block text-gray-300">→</span>
+                <span class="hidden md:block text-gray-200">🔒</span>
             </article>
 
-            <!-- 増やすときはここから下をコピペ -->
-            <article class="news-item border-b border-gray-100 py-6 flex flex-col md:flex-row md:items-center group cursor-pointer" onclick="openModal(this)">
+            <!-- お知らせ 2：ぼかし設定 -->
+            <article class="news-item border-b border-gray-100 py-6 flex flex-col md:flex-row md:items-center group opacity-60 pointer-events-none select-none">
                 <time class="news-date text-gray-400 text-sm md:w-32 mb-2 md:mb-0">2026.08.30</time>
-                <span class="news-tag bg-pink-100 text-pink-600 text-xs font-bold px-3 py-1 rounded-full w-max md:mr-6 mb-2 md:mb-0">重要</span>
-                <h4 class="news-title text-lg font-bold group-hover:text-pink-500 transition flex-1">
+                
+                <!-- タグ（グレーに変更） -->
+                <span class="news-tag bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full w-max md:mr-6 mb-2 md:mb-0">近日公開</span>
+                
+                <!-- タイトル（ぼかし：blurを追加） -->
+                <h4 class="news-title text-lg font-bold text-gray-400 blur-[4px] flex-1">
                     第2回全体同窓会アンケートへのご協力のお願い
                 </h4>
-                <div class="news-body hidden">
-                    <p>今後の同窓会運営をより良くするため、アンケートを実施しています。</p>
-                    <p>皆さんの本音をお聞かせください。集計結果はExcelで分析し、次回の企画に100%反映させます！</p>
-                    <p>感想フォームのリンクは各クラスのクラスLINEに共有していますのでご確認ください。</p>
-                </div>
-                <span class="hidden md:block text-gray-300">→</span>
+
+                <span class="hidden md:block text-gray-200">🔒</span>
             </article>
 
         </div>
