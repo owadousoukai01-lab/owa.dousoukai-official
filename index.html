@@ -132,25 +132,33 @@
                 </div>
             </div>
 
-            <!-- 3. 探究Boost（活動助成） -->
+           <!-- 3. 探究Boost（グッズ制作プロジェクト例） -->
             <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col transform hover:-translate-y-2 transition-all duration-300">
-                <div class="h-48 bg-blue-50 flex items-center justify-center text-blue-300 text-5xl">🚀</div>
+                <!-- グッズイメージ画像があれば差し替え、なければアイコン -->
+                <img src="桜和グッズイメージ.webp" alt="グッズ制作プロジェクト" class="h-48 w-full object-cover">
                 <div class="p-8 flex-1 flex flex-col">
-                    <span class="bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase">探究Boost</span>
-                    <h4 class="text-xl font-bold mt-4">探究活動助成金<br>「第1期公募」開始</h4>
+                    <span class="bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase">探究Boost 採択プロジェクト</span>
+                    <h4 class="text-xl font-bold mt-4">桜和公式オリジナルグッズ<br>製作プロジェクト！</h4>
                     <p class="text-gray-600 text-sm mt-2 leading-relaxed flex-1">
-                        生徒個人の「知りたい・やりたい」を資金面でバックアップ。交通費や材料費などの実費を助成します。
+                        「教育探究」の一環で、母校の魅力を広めるグッズを作りたい生徒チームを支援。試作品の製作費や初期在庫費用を助成します。
                     </p>
+                    
+                    <!-- 進捗メーター（実装イメージ） -->
                     <div class="mt-6">
                         <div class="flex justify-between text-sm mb-2 font-bold">
-                            <span class="text-blue-600">達成率 0%</span>
-                            <span class="text-gray-400">目標: 50,000円</span>
+                            <span class="text-blue-600">達成率 62%</span>
+                            <span class="text-gray-400">目標: 30,000円</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-3">
-                            <div class="bg-blue-600 h-3 rounded-full" style="width: 0%"></div>
+                        <div class="w-full bg-gray-200 rounded-full h-4 shadow-inner">
+                            <div class="bg-blue-600 h-4 rounded-full transition-all duration-1000 shadow-md" style="width: 62%"></div>
                         </div>
                     </div>
-                    <button class="w-full mt-6 bg-gray-200 text-gray-500 font-bold py-2 rounded-lg cursor-not-allowed">申請フォーム準備中</button>
+                    
+                    <!-- アクションボタン -->
+                    <button class="w-full mt-6 bg-pink-500 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-pink-600 transition">
+                        この挑戦を支援する
+                    </button>
+                    <p class="text-[10px] text-gray-400 mt-2 text-center">※現在テスト公開中。実際には寄付されません。</p>
                 </div>
             </div>
 
