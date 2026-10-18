@@ -15,11 +15,11 @@ const STATUS = {
 function renderProjects() {
     const list = document.getElementById("projectList");
     list.innerHTML = PROJECTS.map((p) => {
-        const st = STATUS[p.status] || STATUS.preparing;
+        const st = p.sample ? { label: "企画例", cls: "" } : (STATUS[p.status] || STATUS.preparing);
         const hasGoal = p.goal && p.raised != null;
         const pct = hasGoal ? percent(p) : 0;
-        const button = p.status === "open"
-            ? `<button class="btn btn-accent" type="button" onclick="alert('現在テスト公開中のため、実際の寄付は行われません。')">この挑戦を支援する</button>`
+        const button = p.status === "open" && p.donateUrl
+            ? `<a class="btn btn-accent" href="${escapeHtml(p.donateUrl)}" target="_blank" rel="noopener">この挑戦を支援する ↗</a>`
             : `<span class="btn btn-disabled btn-block" aria-disabled="true">${p.featured ? "準備中（オンライン決済 連携予定）" : "詳細準備中"}</span>`;
 
         return `
@@ -50,7 +50,7 @@ function renderProjects() {
 
 /* ヒーローの浮きカード：受付中プロジェクトの先頭を表示 */
 function renderHeroStat() {
-    const p = PROJECTS.find((x) => x.status === "open" && x.goal);
+    const p = PROJECTS.find((x) => x.status === "open" && x.goal && !x.sample);
     if (!p) return;
     const card = document.getElementById("heroStat");
     const pct = percent(p);

@@ -17,6 +17,22 @@
  */
 const NEWS = [
   {
+    date: "2026-10-19",
+    tag: "イベント",
+    title: "【1期生】20歳の集い 参加申し込み受付中",
+    body: [
+      "1期生のみなさん、20歳おめでとうございます！ 20歳という節目を一緒にお祝いする「20歳の集い」を開催します。",
+      "日程：2027年3月7日（日） 17:00頃から（予定）",
+      "会場：参加人数によって決定します（60名未満の場合は屋形船、60名以上の場合はフェスティバール＆ビアホール）",
+      "参加費：参加人数によって変わるため、後日あらためてご連絡します。",
+      "参加を希望する方は、下のフォームからお申し込みください。3年時のクラスとメールアドレスをご記入いただきます。"
+    ],
+    link: {
+      label: "参加を申し込む",
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSe0TxWnreQcoZjoFHmH4PATx9l5HaeqfT8wZUp64OgUJFc4Jw/viewform"
+    }
+  },
+  {
     date: "2026-07-08",
     tag: "お知らせ",
     title: "桜和高校同窓会ホームページ開設のお知らせ",
@@ -66,6 +82,8 @@ const NEWS = [
  * raised   : 現在の支援額（円）。達成率は自動計算されます
  * featured : true で「継続支援プラン」用の目立つカードになります
  * status   : "open"（支援受付中）/ "preparing"（準備中）/ "done"（達成）
+ * donateUrl: 支援受付中のときの寄付ページURL（status が "open" のときにボタンになります）
+ * sample   : true で「企画例」と表示（実際には募集していない例のプロジェクト）
  */
 const PROJECTS = [
   {
@@ -82,16 +100,18 @@ const PROJECTS = [
     text: "生徒会からの要望を受け、自習室やラウンジのWi-Fi環境を補強する中継機を寄贈します。",
     image: "images/Wi-Fiイメージ.webp",
     goal: 100000,
-    raised: 45000,
-    status: "preparing"
+    raised: 0,
+    status: "preparing",
+    sample: true
   },
   {
-    category: "探究Boost 採択",
+    category: "探究Boost",
     title: "桜和公式オリジナルグッズ製作プロジェクト！",
     text: "「教育探究」の一環で、母校の魅力を広めるグッズを作りたい生徒チームを支援。試作品の製作費や初期在庫費用を助成します。",
     image: "images/桜和グッズイメージ.webp",
     goal: 30000,
-    raised: 18600,
-    status: "open"
+    raised: 0,
+    status: "preparing",
+    sample: true
   }
 ];
