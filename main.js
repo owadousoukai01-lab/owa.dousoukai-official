@@ -83,7 +83,8 @@ function renderNews() {
         document.getElementById("dialogDate").textContent = fmtDate(n.date);
         document.getElementById("dialogTag").textContent = n.tag;
         document.getElementById("dialogTitle").textContent = n.title;
-        document.getElementById("dialogContent").innerHTML = (n.body || []).map((t) => `<p>${escapeHtml(t)}</p>`).join("");
+        document.getElementById("dialogContent").innerHTML = (n.body || []).map((t) => `<p>${escapeHtml(t)}</p>`).join("")
+            + (n.link ? `<p><a class="btn btn-accent dialog-link" href="${escapeHtml(n.link.url)}" target="_blank" rel="noopener">${escapeHtml(n.link.label)} ↗</a></p>` : "");
         dialog.showModal();
     });
     dialog.addEventListener("click", (e) => {

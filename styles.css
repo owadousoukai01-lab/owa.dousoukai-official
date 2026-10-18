@@ -390,6 +390,7 @@ p { margin: 0; }
 .news-dialog h2 { font-size: 24px; color: var(--navy); margin: 12px 0 24px; padding-right: 32px; }
 .dialog-content p + p { margin-top: 1em; }
 .dialog-content { color: #374152; margin-bottom: 32px; }
+.dialog-content .dialog-link { width: auto; margin-top: 8px; }
 @media (max-width: 640px) { .dialog-body { padding: 40px 24px 28px; } }
 
 /* ---------- スクロール表示 ---------- */
