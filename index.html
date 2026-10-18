@@ -4,289 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>桜和高校同窓会 | 在校生の探究活動を加速させる</title>
-    <!-- ↓これを追加すると、検索結果の下に説明文が出ます（重要！） -->
-    <meta name="description" content="桜和高校同窓会の公式Webサイトです。在校生の探究活動を支援するプロジェクトや、同窓生向けの最新ニュースを公開しています。">
-    <!-- Tailwind CSS (デザインを整えるためのツール) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* 背景画像の設定 */
-        .hero-bg {
-            /* linear-gradient は画像を少し暗くして文字を読みやすくするための設定です */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('桜和高校外見.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        /* スクールカラー（紺色） */
-        .navy-bg { background-color: #1e3a8a; }
-        /* 桜色 */
-        .sakura-text { color: #f472b6; }
-    </style>
+    <meta name="description" content="大阪府立桜和高等学校 同窓会の公式Webサイトです。在校生の探究活動を支援するプロジェクトや、同窓生向けの最新ニュースを公開しています。">
+    <meta property="og:title" content="桜和高校同窓会">
+    <meta property="og:description" content="卒業生の力を集結し、在校生の探究活動のアクセルとなる。">
+    <meta property="og:image" content="images/桜和高校外見.webp">
+    <meta name="theme-color" content="#0d2142">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body>
 
-    <!-- ナビゲーションバー -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-    <img src="桜和高校校章.webp" alt="桜和高校校章" class="h-10 md:h-14">
-    <span class="ml-3 text-xl font-bold text-blue-900 hidden sm:inline">同窓会</span>
-</div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#about" class="hover:text-pink-500 transition">理念</a>
-                <a href="#projects" class="hover:text-pink-500 transition">プロジェクト</a>
-                <a href="#news" class="hover:text-pink-500 transition">お知らせ</a>
-                <!-- グレーアウトして押せない設定 -->
-<span class="bg-gray-300 text-white px-5 py-2 rounded-full cursor-not-allowed opacity-70">
-    寄付の受付準備中
-</span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ヒーローセクション（背景画像の部分） -->
-    <header class="hero-bg h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white px-4">
-        <div>
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-                卒業生の力を集結し、<br>
-                在校生の探究活動の<span class="sakura-text">アクセル</span>となる。
-            </h2>
-            <p class="text-lg md:text-xl mb-10 opacity-90">私たちは母校の未来へ投資する、新しい形の同窓会です。</p>
-            <a href="#projects" class="bg-white text-blue-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition inline-block">
-                進行中のプロジェクトを見る
+    <!-- ナビゲーション -->
+    <header class="site-header" id="top">
+        <div class="container header-inner">
+            <a href="#top" class="brand" aria-label="桜和高校同窓会 トップへ">
+                <img src="images/桜和高校校章.webp" alt="大阪府立桜和高等学校" class="brand-logo">
+                <span class="brand-tag">同窓会</span>
             </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+                <span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav">
+                <a href="#about">理念</a>
+                <a href="#how">仕組み</a>
+                <a href="#projects">プロジェクト</a>
+                <a href="#news">お知らせ</a>
+                <a href="#faq">よくある質問</a>
+                <span class="btn btn-sm btn-disabled" aria-disabled="true">寄付の受付準備中</span>
+            </nav>
         </div>
     </header>
 
-    <!-- 理念セクション -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-16 border-b-4 border-pink-400 inline-block">同窓会の新しい形</h3>
-            <div class="grid md:grid-cols-3 gap-12">
-                <!-- 理念1 -->
-                <div class="p-8 border rounded-2xl shadow-sm hover:shadow-md transition">
-                    <div class="text-5xl mb-6">🚀</div>
-                    <h4 class="text-xl font-bold mb-3">探究を止めるな</h4>
-                    <p class="text-gray-600 leading-relaxed">生徒会と連携し、設備への不満や予算不足で止まっている生徒の挑戦を吸い上げ、直接支援します。</p>
-                </div>
-                <!-- 理念2 -->
-                <div class="p-8 border rounded-2xl shadow-sm hover:shadow-md transition">
-                    <div class="text-5xl mb-6">🤝</div>
-                    <h4 class="text-xl font-bold mb-3">プロジェクト化</h4>
-                    <p class="text-gray-600 leading-relaxed">「義務」のような年会費ではなく、個別の具体的なプロジェクトへの「共感」で資金を募ります。</p>
-                </div>
-                <!-- 理念3 -->
-                <div class="p-8 border rounded-2xl shadow-sm hover:shadow-md transition">
-                    <div class="text-5xl mb-6">📈</div>
-                    <h4 class="text-xl font-bold mb-3">成果を共有</h4>
-                    <p class="text-gray-600 leading-relaxed">支援によって後輩たちがどう成長したか、そのアクセル効果をすべての卒業生に透明性を持って報告します。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
- <!-- プロジェクトセクション（実装イメージ版） -->
-<section id="projects" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <h3 class="text-3xl font-bold mb-16 text-center">進行中のプロジェクト</h3>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- 1. 継続支援プラン（運営の土台） -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-blue-900 flex flex-col transform hover:-translate-y-2 transition-all duration-300">
-                <div class="navy-bg text-white text-center py-2 text-xs font-bold tracking-widest uppercase">ALWAYS OPEN</div>
-                <div class="p-8 flex-1 flex flex-col">
-                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full w-max">運営基盤の支援</span>
-                    <h4 class="text-2xl font-black mt-4 leading-tight text-blue-900">桜和高校同窓会<br>継続支援プラン</h4>
-                    <p class="text-gray-600 text-sm mt-4 leading-relaxed flex-1">
-                        特定のプロジェクトに限定せず、同窓会活動全般（サイト維持・生徒会連携・事務局運営）を支えていただくプランです。年会費に代わる新しい応援の形です。
-                    </p>
-                    <div class="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                        <div class="flex justify-between text-sm">
-                            <span>目安：3,000円〜</span>
-                        </div>
+    <main>
+        <!-- ヒーロー -->
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="dot"></span>新しい形の同窓会</p>
+                    <h1 class="hero-title">
+                        卒業生の力を、<br>
+                        在校生の探究の<br>
+                        <span class="accent">アクセル</span>に。
+                    </h1>
+                    <p class="hero-lead">私たちは、母校の未来へ投資する同窓会です。<br class="pc">生徒の「やってみたい」を、卒業生の共感で前に進めます。</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">進行中のプロジェクト<span aria-hidden="true">→</span></a>
+                        <a href="#how" class="btn btn-ghost">仕組みを知る</a>
                     </div>
-                    <button class="w-full mt-8 navy-bg text-white font-bold py-4 rounded-xl shadow-lg opacity-50 cursor-not-allowed">準備中（Stripe連携予定）</button>
                 </div>
-            </div>
-
-            <!-- 2. インフラBoost（設備支援） -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col transform hover:-translate-y-2 transition-all duration-300">
-                <img src="Wi-Fiイメージ.webp" alt="Wi-Fi強化" class="h-48 w-full object-cover">
-                <div class="p-8 flex-1 flex flex-col">
-                    <span class="bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase">インフラBoost</span>
-                    <h4 class="text-xl font-bold mt-4">校内Wi-Fi環境の<br>死角を無くしたい！</h4>
-                    <p class="text-gray-600 text-sm mt-2 leading-relaxed flex-1">
-                        生徒会からの要望を受け、自習室やラウンジのWi-Fi環境を補強する中継機を寄贈します。
-                    </p>
-                    <div class="mt-6">
-                        <div class="flex justify-between text-sm mb-2 font-bold">
-                            <span class="text-blue-600">達成率 45%</span>
-                            <span class="text-gray-400">目標: 100,000円</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-3">
-                            <div class="bg-blue-600 h-3 rounded-full" style="width: 45%"></div>
-                        </div>
+                <div class="hero-visual">
+                    <div class="hero-photo">
+                        <img src="images/桜和高校外見.webp" alt="大阪府立桜和高等学校の校舎">
                     </div>
-                    <button class="w-full mt-6 bg-gray-200 text-gray-500 font-bold py-2 rounded-lg cursor-not-allowed">詳細準備中</button>
-                </div>
-            </div>
-
-           <!-- 3. 探究Boost（グッズ制作プロジェクト例） -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col transform hover:-translate-y-2 transition-all duration-300">
-                <!-- グッズイメージ画像があれば差し替え、なければアイコン -->
-                <img src="桜和グッズイメージ.webp" alt="グッズ制作プロジェクト" class="h-48 w-full object-cover">
-                <div class="p-8 flex-1 flex flex-col">
-                    <span class="bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase">探究Boost 採択プロジェクト</span>
-                    <h4 class="text-xl font-bold mt-4">桜和公式オリジナルグッズ<br>製作プロジェクト！</h4>
-                    <p class="text-gray-600 text-sm mt-2 leading-relaxed flex-1">
-                        「教育探究」の一環で、母校の魅力を広めるグッズを作りたい生徒チームを支援。試作品の製作費や初期在庫費用を助成します。
-                    </p>
-                    
-                    <!-- 進捗メーター（実装イメージ） -->
-                    <div class="mt-6">
-                        <div class="flex justify-between text-sm mb-2 font-bold">
-                            <span class="text-blue-600">達成率 62%</span>
-                            <span class="text-gray-400">目標: 30,000円</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-4 shadow-inner">
-                            <div class="bg-blue-600 h-4 rounded-full transition-all duration-1000 shadow-md" style="width: 62%"></div>
-                        </div>
+                    <div class="float-card" id="heroStat" hidden>
+                        <p class="float-label"></p>
+                        <p class="float-title"></p>
+                        <div class="progress"><span></span></div>
+                        <p class="float-meta"></p>
                     </div>
-                    
-                    <!-- アクションボタン -->
-                    <button class="w-full mt-6 bg-pink-500 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-pink-600 transition">
-                        この挑戦を支援する
-                    </button>
-                    <p class="text-[10px] text-gray-400 mt-2 text-center">※現在テスト公開中。実際には寄付されません。</p>
+                    <img src="images/さくた.webp" alt="" class="mascot-peek" aria-hidden="true">
                 </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-</section>
-    
-    <!-- お知らせセクション -->
-<section id="news" class="py-20 bg-white">
-    <div class="container mx-auto px-6 max-w-4xl">
-        <h3 class="text-3xl font-bold mb-12 text-center">お知らせ</h3>
-        
-        <div class="space-y-2">
-            <!-- お知らせの型（これをコピーして増やせます） -->
-             <article class="news-item border-b border-gray-100 py-6 flex flex-col md:flex-row md:items-center group cursor-pointer" onclick="openModal(this)">
-                <time class="news-date text-gray-400 text-sm md:w-32 mb-2 md:mb-0">2026.07.08</time>
-                <span class="news-tag bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full w-max md:mr-6 mb-2 md:mb-0">お知らせ</span>
-                <h4 class="news-title text-lg font-bold group-hover:text-pink-500 transition flex-1">
-                    桜和高校同窓会ホームページ開設のお知らせ
-                </h4>
-                <div class="news-body hidden">
-                    <p>桜和高校同窓会の新しいホームページが開設されました！</p>
-                    <p>より良い情報提供と交流の場を提供するため、引き続きご支援のほどよろしくお願いいたします。</p>
+        <!-- 理念 -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-head">
+                    <p class="kicker">Philosophy</p>
+                    <h2 class="section-title">「会費を集める会」から、<br class="sp">「挑戦を加速させる会」へ。</h2>
                 </div>
-                <span class="hidden md:block text-gray-300">→</span>
-            </article>
-
-            <!-- お知らせ 1：ぼかし設定 -->
-            <article class="news-item border-b border-gray-100 py-6 flex flex-col md:flex-row md:items-center group opacity-60 pointer-events-none select-none">
-                <!-- 日付 -->
-                <time class="news-date text-gray-400 text-sm md:w-32 mb-2 md:mb-0">2026.08.29</time>
-                
-                <!-- タグ（グレーに変更） -->
-                <span class="news-tag bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full w-max md:mr-6 mb-2 md:mb-0">準備中</span>
-                
-                <!-- タイトル（ぼかし：blurを追加） -->
-                <h4 class="news-title text-lg font-bold text-gray-400 blur-[4px] flex-1">
-                   第2回「桜和高校全体同窓会」を実施しました
-                </h4>
-
-                <span class="hidden md:block text-gray-200">🔒</span>
-            </article>
-
-            <!-- お知らせ 2：ぼかし設定 -->
-            <article class="news-item border-b border-gray-100 py-6 flex flex-col md:flex-row md:items-center group opacity-60 pointer-events-none select-none">
-                <time class="news-date text-gray-400 text-sm md:w-32 mb-2 md:mb-0">2026.08.30</time>
-                
-                <!-- タグ（グレーに変更） -->
-                <span class="news-tag bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full w-max md:mr-6 mb-2 md:mb-0">近日公開</span>
-                
-                <!-- タイトル（ぼかし：blurを追加） -->
-                <h4 class="news-title text-lg font-bold text-gray-400 blur-[4px] flex-1">
-                    第2回全体同窓会アンケートへのご協力のお願い
-                </h4>
-
-                <span class="hidden md:block text-gray-200">🔒</span>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-    <!-- フッター -->
-    <footer class="navy-bg text-white py-16">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-4">桜和高校同窓会</h2>
-            <p class="text-sm opacity-60">© 2024 Sakuwa High School Alumni Association. All Rights Reserved.</p>
-            <div class="mt-10 flex justify-center space-x-8 text-sm">
-                <a href="#" class="hover:text-pink-400 transition underline decoration-pink-500/30">お問い合わせ</a>
-                <a href="#" class="hover:text-pink-400 transition underline decoration-pink-500/30">プライバシーポリシー</a>
+                <div class="pillars">
+                    <article class="pillar">
+                        <span class="pillar-num">01</span>
+                        <h3>探究を止めるな</h3>
+                        <p>生徒会と連携し、設備への不満や予算不足で止まっている生徒の挑戦を吸い上げ、直接支援します。</p>
+                    </article>
+                    <article class="pillar">
+                        <span class="pillar-num">02</span>
+                        <h3>プロジェクト化</h3>
+                        <p>「義務」のような年会費ではなく、個別の具体的なプロジェクトへの「共感」で資金を募ります。</p>
+                    </article>
+                    <article class="pillar">
+                        <span class="pillar-num">03</span>
+                        <h3>成果を共有</h3>
+                        <p>支援によって後輩たちがどう成長したか、そのアクセル効果をすべての卒業生に透明性を持って報告します。</p>
+                    </article>
+                </div>
             </div>
+        </section>
+
+        <!-- 仕組み -->
+        <section class="section section-dark" id="how">
+            <div class="container">
+                <div class="section-head">
+                    <p class="kicker">How it works</p>
+                    <h2 class="section-title">支援が届くまでの4ステップ</h2>
+                </div>
+                <ol class="steps">
+                    <li class="step">
+                        <span class="step-num">STEP 01</span>
+                        <h3>生徒が提案する</h3>
+                        <p>「こんな設備が欲しい」「この探究を形にしたい」。生徒会を通じて、在校生の声を集めます。</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">STEP 02</span>
+                        <h3>同窓会がプロジェクト化</h3>
+                        <p>目的・必要な金額・期待される成果を整理し、支援を募るプロジェクトとして公開します。</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">STEP 03</span>
+                        <h3>卒業生が共感で支援</h3>
+                        <p>応援したいプロジェクトを選んで支援。金額も関わり方も、一人ひとりが自由に選べます。</p>
+                    </li>
+                    <li class="step">
+                        <span class="step-num">STEP 04</span>
+                        <h3>成果を報告する</h3>
+                        <p>支援がどう使われ、後輩たちがどう成長したか。お知らせで、すべての卒業生に共有します。</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- プロジェクト -->
+        <section class="section section-tint" id="projects">
+            <div class="container">
+                <div class="section-head">
+                    <p class="kicker">Projects</p>
+                    <h2 class="section-title">進行中のプロジェクト</h2>
+                    <p class="section-lead">気になる挑戦を見つけて、応援してください。</p>
+                </div>
+                <div class="project-grid" id="projectList"></div>
+                <p class="demo-note">※ 現在テスト公開中です。実際の寄付は行われません。</p>
+            </div>
+        </section>
+
+        <!-- 関わり方 -->
+        <section class="section" id="join">
+            <div class="container">
+                <div class="section-head">
+                    <p class="kicker">Get involved</p>
+                    <h2 class="section-title">あなたにできる関わり方</h2>
+                </div>
+                <div class="join-grid">
+                    <article class="join-card">
+                        <p class="join-who">卒業生のみなさま</p>
+                        <h3>プロジェクトを支援する</h3>
+                        <p>共感したプロジェクトへ、1口から支援いただけます。オンライン決済は現在準備中です。</p>
+                        <span class="text-link is-disabled">準備中</span>
+                    </article>
+                    <article class="join-card">
+                        <p class="join-who">在校生のみなさま</p>
+                        <h3>挑戦を提案する</h3>
+                        <p>予算や設備の壁で止まっているアイデアはありませんか？ まずは生徒会に相談してください。</p>
+                        <a href="#faq" class="text-link">提案の流れを見る →</a>
+                    </article>
+                    <article class="join-card join-card-accent">
+                        <img src="images/さくた.webp" alt="" class="join-mascot" aria-hidden="true">
+                        <p class="join-who">同窓会の仲間として</p>
+                        <h3>運営に参加する</h3>
+                        <p>企画・広報・プロジェクト伴走など、できる範囲で一緒に同窓会をつくりませんか。</p>
+                        <a href="#contact" class="text-link">お問い合わせ →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- お知らせ -->
+        <section class="section section-tint" id="news">
+            <div class="container narrow">
+                <div class="section-head">
+                    <p class="kicker">News</p>
+                    <h2 class="section-title">お知らせ</h2>
+                </div>
+                <ul class="news-list" id="newsList"></ul>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container narrow">
+                <div class="section-head">
+                    <p class="kicker">FAQ</p>
+                    <h2 class="section-title">よくある質問</h2>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>年会費はありますか？</summary>
+                        <p>義務としての年会費ではなく、具体的なプロジェクトへの「共感」で支援いただく形をとっています。活動全般を応援したい方には「継続支援プラン」をご用意する予定です。</p>
+                    </details>
+                    <details>
+                        <summary>支援したお金は何に使われますか？</summary>
+                        <p>各プロジェクトに記載された目的にのみ使用します。支援の使い道とその成果は、お知らせで報告します。</p>
+                    </details>
+                    <details>
+                        <summary>在校生はどうやってプロジェクトを提案できますか？</summary>
+                        <p>生徒会を窓口として受け付けています。生徒会から同窓会へ共有され、内容を一緒に整理したうえでプロジェクトとして公開します。</p>
+                    </details>
+                    <details>
+                        <summary>寄付はいつから受け付けますか？</summary>
+                        <p>オンライン決済の仕組みを準備中です。開始の際はこのサイトのお知らせでご案内します。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="contact">
+            <div class="container cta-inner">
+                <div>
+                    <h2>母校の「次の挑戦」を、一緒に。</h2>
+                    <p>ご質問・ご提案・運営へのご参加は、お気軽にお問い合わせください。</p>
+                </div>
+                <a href="#" class="btn btn-light">お問い合わせ（準備中）</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p class="footer-name">桜和高校同窓会</p>
+                <p class="footer-sub">大阪府立桜和高等学校 同窓会</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="#about">理念</a>
+                <a href="#projects">プロジェクト</a>
+                <a href="#news">お知らせ</a>
+                <a href="#">プライバシーポリシー</a>
+            </nav>
+        </div>
+        <div class="container">
+            <p class="copyright">© 2026 Osaka Prefectural Owa Senior High School Alumni Association.</p>
         </div>
     </footer>
 
-    <!-- 記事表示用のポップアップ（モーダル） -->
-    <div id="newsModal" class="fixed inset-0 bg-black bg-opacity-50 z-[100] hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl">
-            <div class="p-8">
-                <div class="flex justify-between items-start mb-6">
-                    <div>
-                        <time id="modalDate" class="text-gray-400 text-sm"></time>
-                        <h2 id="modalTitle" class="text-2xl font-bold mt-2"></h2>
-                    </div>
-                    <button onclick="closeNews()" class="text-gray-400 hover:text-gray-600 text-3xl">&times;</button>
-                </div>
-                <div id="modalContent" class="text-gray-600 leading-relaxed space-y-4">
-                    <!-- ここに記事の中身が入ります -->
-                </div>
-                <div class="mt-8 text-right">
-                    <button onclick="closeNews()" class="bg-gray-100 text-gray-600 px-6 py-2 rounded-lg font-bold hover:bg-gray-200 transition">閉じる</button>
-                </div>
-            </div>
+    <!-- お知らせ詳細 -->
+    <dialog class="news-dialog" id="newsDialog" aria-labelledby="dialogTitle">
+        <div class="dialog-body">
+            <button class="dialog-close" aria-label="閉じる" data-close>&times;</button>
+            <p class="dialog-meta"><time id="dialogDate"></time><span id="dialogTag" class="tag"></span></p>
+            <h2 id="dialogTitle"></h2>
+            <div id="dialogContent" class="dialog-content"></div>
+            <button class="btn btn-ghost" data-close>閉じる</button>
         </div>
-    </div>
+    </dialog>
 
+    <script src="data.js"></script>
+    <script src="main.js"></script>
 </body>
-<script>
-    function openModal(element) {
-        // クリックされた記事(element)の中から、各情報を探し出す
-        const date = element.querySelector('.news-date').innerText;
-        const title = element.querySelector('.news-title').innerText;
-        const body = element.querySelector('.news-body').innerHTML; // HTMLごと取得
-
-        // モーダルの各場所に流し込む
-        document.getElementById('modalDate').innerText = date;
-        document.getElementById('modalTitle').innerText = title;
-        document.getElementById('modalContent').innerHTML = body;
-
-        // モーダルを表示
-        const modal = document.getElementById('newsModal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.style.overflow = 'hidden'; // 背景スクロール禁止
-    }
-
-    function closeNews() {
-        const modal = document.getElementById('newsModal');
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.body.style.overflow = 'auto'; // スクロール再開
-    }
-
-    // 外側クリックで閉じる
-    window.onclick = function(event) {
-        const modal = document.getElementById('newsModal');
-        if (event.target == modal) {
-            closeNews();
-        }
-    }
-</script>
 </html>
