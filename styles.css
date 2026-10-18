@@ -397,3 +397,17 @@ p { margin: 0; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- プライバシーポリシー等 ---------- */
+.legal { padding-top: 8px; }
+.legal-lead { margin: 24px 0 8px; color: var(--muted); }
+.legal h2 { font-size: 20px; color: var(--navy); margin: 48px 0 12px; padding-left: 14px; border-left: 4px solid var(--sakura); }
+.legal p, .legal li { color: #374152; }
+.legal ul { padding-left: 1.4em; margin: 8px 0 0; }
+.legal li + li { margin-top: 6px; }
+.legal a { color: var(--blue); text-decoration: underline; }
+.legal-date { margin-top: 56px; text-align: right; font-size: 14px; color: var(--muted) !important; }
+.site-footer .container:only-child .copyright { padding-top: 0; }
+.cta-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-line { background: #06c755; color: #fff; }
+.btn-line:hover { background: #05b34c; transform: translateY(-2px); }
