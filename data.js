@@ -115,3 +115,39 @@ const PROJECTS = [
     sample: true
   }
 ];
+
+/* ========== 桜和Boost：活動支援 ==========
+ * 講演や相談など「お金以外」で後輩を応援する支援メニューです。
+ * formUrl : 申し込みフォーム（Googleフォーム）のURL。空のままだと「準備中」と表示されます
+ * icon    : mic（講演）/ chat（相談）/ flag（行事）/ bulb（探究）
+ * format  : 実施のかたち（カードの下に小さく表示）
+ */
+const ACTIVITY_SUPPORT = {
+  formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdKHG3GZsqUpRFfBR_CmOClu_Uqi3FAgUO7ZM8aAl5Bh3Mgww/viewform",
+  menu: [
+    {
+      icon: "mic",
+      title: "講演・進路講話",
+      text: "大学での学びや仕事のこと、高校時代の経験を在校生に話します。学校からの依頼に合わせて実施します。",
+      format: "来校／オンライン"
+    },
+    {
+      icon: "chat",
+      title: "後輩の相談に乗る",
+      text: "進路選び・受験勉強・大学生活など、少し先を歩く先輩として在校生の相談に応えます。",
+      format: "来校／オンライン"
+    },
+    {
+      icon: "flag",
+      title: "オープンキャンパス等の手伝い",
+      text: "オープンスクールや文化祭などの学校行事で、受付・案内・体験談の紹介などをサポートします。",
+      format: "来校"
+    },
+    {
+      icon: "bulb",
+      title: "探究活動のメンター",
+      text: "在校生の探究テーマに、専門分野や仕事の経験を活かしてアドバイスします。",
+      format: "来校／オンライン"
+    }
+  ]
+};

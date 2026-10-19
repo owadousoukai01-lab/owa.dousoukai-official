@@ -61,6 +61,32 @@ function renderHeroStat() {
     card.hidden = false;
 }
 
+
+/* ---------- 桜和Boost：活動支援 ---------- */
+const ICONS = {
+    mic: "<path d=\"M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z\"/><path d=\"M19 11a7 7 0 0 1-14 0M12 18v3\"/>",
+    chat: "<path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/><path d=\"M8 9h8M8 13h5\"/>",
+    flag: "<path d=\"M4 21V4M4 4h12l-2 4 2 4H4\"/>",
+    bulb: "<path d=\"M9 18h6M10 21h4\"/><path d=\"M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z\"/>"
+};
+
+function renderActivities() {
+    const list = document.getElementById("activityList");
+    if (!list || typeof ACTIVITY_SUPPORT === "undefined") return;
+    list.innerHTML = ACTIVITY_SUPPORT.menu.map((a) => `
+        <article class="activity reveal">
+            <span class="activity-icon" aria-hidden="true"><svg viewBox="0 0 24 24">${ICONS[a.icon] || ICONS.bulb}</svg></span>
+            <h4>${escapeHtml(a.title)}</h4>
+            <p>${escapeHtml(a.text)}</p>
+            <span class="activity-format">${escapeHtml(a.format)}</span>
+        </article>`).join("");
+    const url = ACTIVITY_SUPPORT.formUrl;
+    document.getElementById("activityCta").innerHTML = url
+        ? `<a class="btn btn-primary" href="${escapeHtml(url)}" target="_blank" rel="noopener">活動支援に申し込む ↗</a>
+           <p class="activity-note">公式LINEのメニュー「桜和生を支援する」からも申し込めます。</p>`
+        : `<span class="btn btn-disabled" aria-disabled="true">申し込み受付準備中</span>`;
+}
+
 /* ---------- お知らせ ---------- */
 function renderNews() {
     const list = document.getElementById("newsList");
@@ -134,6 +160,7 @@ function setupReveal() {
 }
 
 renderProjects();
+renderActivities();
 renderHeroStat();
 renderNews();
 setupNav();

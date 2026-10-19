@@ -13,11 +13,19 @@
 | 位置 | ボタン | タイプ | リンク先 |
 | --- | --- | --- | --- |
 | A 左上 | お知らせ | リンク | https://owadousoukai01-lab.github.io/owa.dousoukai-official/#news |
-| B 中上 | 桜和生を支援する | リンク | https://owadousoukai01-lab.github.io/owa.dousoukai-official/#projects |
+| B 中上 | 桜和生を支援する | テキスト | 「桜和生を支援する」を送信 → 応答メッセージ「桜和Boost支援の案内」が自動返信 |
 | C 右上 | お問い合わせ | リンク | https://docs.google.com/forms/d/e/1FAIpQLSdIPSlpCRuAYOnHgE4lTSLBRpb7VxJOLM5mbraNIneKmbVehQ/viewform |
 | D 左下 | ホームページ | リンク | https://owadousoukai01-lab.github.io/owa.dousoukai-official/ |
 | E 中下 | 役員に立候補する | リンク | https://docs.google.com/forms/d/e/1FAIpQLScCVlBqDU5cSwVnrnkZWkBW1D2YwZuq8OjIEfnBWPkEzAd5bQ/viewform |
 | F 右下 | Instagram | リンク | https://www.instagram.com/owa.dousoukai25/ |
+
+## 自動返信（応答メッセージ）
+
+- タイトル：桜和Boost支援の案内（キーワード応答）
+- キーワード：「桜和生を支援する」「活動支援」「桜和Boost」（完全一致）
+- 内容：活動支援の申し込みフォーム、クラウドファンディング（#fund）、公式サイト（#projects）への案内
+- 応答設定：手動チャット＋応答メッセージ（2026年10月19日に変更）
+- 活動支援フォーム：https://docs.google.com/forms/d/e/1FAIpQLSdKHG3GZsqUpRFfBR_CmOClu_Uqi3FAgUO7ZM8aAl5Bh3Mgww/viewform
 
 > リッチメニューは、公式アカウントと**1対1のトーク**でのみ表示されます。クラスのグループLINEの中には表示されません。
 
