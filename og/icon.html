@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  ファビコン（ブラウザのタブに出るアイコン）を作るページ
+  校章画像の左側（エンブレム部分）だけを、白い角丸の正方形に切り出します。
+  使い方：ローカルサーバーでこのページを開き、3つのリンクから画像を保存して images/ に置く
+-->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ファビコン作成</title>
+<style>
+    body { font-family: sans-serif; padding: 24px; background: #eee; }
+    .row { display: flex; gap: 24px; align-items: flex-end; flex-wrap: wrap; }
+    figure { margin: 0; text-align: center; }
+    canvas { display: block; margin: 0 auto 8px; }
+</style>
+</head>
+<body>
+    <h1>ファビコン作成</h1>
+    <div class="row" id="out"></div>
+    <script>
+        // 校章画像 600×127 のうち、エンブレムは左 0〜150px
+        const EMBLEM_W = 150, IMG_H = 127;
+        const SIZES = [[32, "favicon-32.png"], [180, "apple-touch-icon.png"], [512, "icon-512.png"]];
+        const img = new Image();
+        img.src = "../images/桜和高校校章.webp";
+        img.onload = () => SIZES.forEach(([size, name]) => {
+            const c = document.createElement("canvas");
+            c.width = c.height = size;
+            const x = c.getContext("2d");
+            x.imageSmoothingQuality = "high";
+            x.fillStyle = "#fff";
+            x.beginPath(); x.roundRect(0, 0, size, size, size * 0.22); x.fill();
+            const s = size * 0.82 / EMBLEM_W, dw = EMBLEM_W * s, dh = IMG_H * s;
+            x.drawImage(img, 0, 0, EMBLEM_W, IMG_H, (size - dw) / 2, (size - dh) / 2, dw, dh);
+            const fig = document.createElement("figure");
+            const a = document.createElement("a");
+            a.href = c.toDataURL("image/png"); a.download = name; a.textContent = `${name}（${size}px）を保存`;
+            fig.append(c, a);
+            document.getElementById("out").append(fig);
+        });
+    </script>
+</body>
+</html>
